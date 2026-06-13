@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiEmployeeApp.EmployeePage"
+             BackgroundColor="#F4F5F7"
+             Title="Employee Form">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <!-- CARD SENZA FRAME -->
+            <Border
+                StrokeThickness="0"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 18"
+                Shadow="{Shadow Brush=#00000020, Offset='0,4', Radius=12}">
+
+                <VerticalStackLayout Padding="20" Spacing="16">
+
+                    <!-- FULL NAME -->
+                    <VerticalStackLayout>
+                        <Label Text="Full Name"
+                               FontSize="14"
+                               TextColor="#555"
+                               Margin="0,0,0,4"/>
+                        <Border BackgroundColor="#F0F0F0"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Entry x:Name="FullNameEntry"
+                                   Placeholder="Enter full name"
+                                   HeightRequest="48"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- POSITION -->
+                    <VerticalStackLayout>
+                        <Label Text="Position"
+                               FontSize="14"
+                               TextColor="#555"
+                               Margin="0,0,0,4"/>
+                        <Border BackgroundColor="#F0F0F0"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Entry x:Name="PositionEntry"
+                                   Placeholder="Enter position"
+                                   HeightRequest="48"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- SALARY -->
+                    <VerticalStackLayout>
+                        <Label Text="Salary"
+                               FontSize="14"
+                               TextColor="#555"
+                               Margin="0,0,0,4"/>
+                        <Border BackgroundColor="#F0F0F0"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Entry x:Name="SalaryEntry"
+                                   Placeholder="Enter salary"
+                                   Keyboard="Numeric"
+                                   HeightRequest="48"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- BUTTONS -->
+                    <Grid ColumnDefinitions="*,*"
+                          ColumnSpacing="12"
+                          Margin="0,10,0,0">
+
+                        <!-- SAVE -->
+                        <Button Grid.Column="0"
+                                Text="Save"
+                                Clicked="OnSaveClicked"
+                                TextColor="White"
+                                CornerRadius="12"
+                                HeightRequest="48"
+                                FontAttributes="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#4CAF50" Offset="0.1"/>
+                                    <GradientStop Color="#2E7D32" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <!-- CANCEL -->
+                        <Button Grid.Column="1"
+                                Text="Cancel"
+                                Clicked="OnCancelClicked"
+                                BackgroundColor="#E0E0E0"
+                                TextColor="#333"
+                                CornerRadius="12"
+                                HeightRequest="48"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
